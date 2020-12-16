@@ -110,7 +110,11 @@ void TIM5_IRQHandler(void){
     	char str[1000] = {};
     	if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET){
 		TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
-		sprintf(str, "[ahrs %d]  roll: %f, pitch: %f, yaw: %f\n\r", cnt++,ahrs.attitude.roll, ahrs.attitude.pitch, ahrs.attitude.yaw);
+		/*	Your Code here		*/	
+			
+
+		sprintf(str, "[ahrs %d]\n\r",cnt++ );
+		
 		uart3_puts(str);
     	}
 }
