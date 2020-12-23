@@ -30,11 +30,9 @@ void pid_control(float data,float ang_vel){
 
 
 /** write your code here **/
-	left_signal =  12000 + left_Base + (error * gain_P + error_sum * gain_I + ang_vel * gain_D);
-	right_signal = 12000 + left_Base - (error * gain_P + error_sum * gain_I + ang_vel * gain_D);
-
-
-/**                      **/
+	left_signal =  12000 + left_Base + error * gain_P;
+	right_signal = 12000 + left_Base - error * gain_P;
+/**     end    **/
 
 
 	left_signal < (12000) ? left_signal = (12000) : 1;
